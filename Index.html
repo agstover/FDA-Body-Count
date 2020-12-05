@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p>Days since the Pfizer/BioNTech vaccine was approved in the UK</p>
+<p id="demo"></p>
+<p>Deaths since then</p>
+<p>~5,486</p>
+<iframe src="https://ourworldindata.org/coronavirus-data-explorer?yScale=log&zoomToSelection=true&time=2020-12-02..latest&country=~USA&region=World&deathsMetric=true&interval=total&hideControls=true&smoothing=0&pickerMetric=location&pickerSort=asc" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
+<script>
+// Set the date we're counting from
+var countDownDate = new Date("Dec 2, 2020").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the date
+  var distance = now-countDownDate;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  //if (distance < 0) {
+  //  clearInterval(x);
+  //  document.getElementById("demo").innerHTML = "EXPIRED";
+  //}
+}, 1000);
+</script>
+
+</body>
+</html>
+
